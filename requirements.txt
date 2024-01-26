@@ -1,0 +1,5 @@
+pydantic #0.18.2
+pytorch #CUDA 12.1
+tqdm
+rotary-embedding-torch
+einops
