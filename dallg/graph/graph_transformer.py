@@ -1,11 +1,12 @@
+"""
+CODE FROM https://github.com/lucidrains/graph-transformer-pytorch/blob/main/graph_transformer_pytorch/graph_transformer_pytorch.py
+"""
 import torch
 from torch import nn, einsum
 from einops import rearrange, repeat
-
 from rotary_embedding_torch import RotaryEmbedding, apply_rotary_emb
 
 # helpers
-
 def exists(val):
     return val is not None
 
@@ -14,7 +15,6 @@ def default(val, d):
 
 
 # normalizations
-
 class PreNorm(nn.Module):
     def __init__(
         self,
@@ -49,7 +49,6 @@ class GatedResidual(nn.Module):
         return x * gate + res * (1 - gate)
 
 # attention
-
 class Attention(nn.Module):
     def __init__(self, dim, pos_emb=None, dim_head=64, heads=8, edge_dim=None):
         super().__init__()
@@ -103,7 +102,6 @@ class Attention(nn.Module):
         return self.to_out(out)
 
 # optional feedforward
-
 def FeedForward(dim, ff_mult = 4):
     return nn.Sequential(
         nn.Linear(dim, dim * ff_mult),
@@ -112,7 +110,6 @@ def FeedForward(dim, ff_mult = 4):
     )
 
 # classes
-
 class GraphTransformer(nn.Module):
     def __init__(
         self,

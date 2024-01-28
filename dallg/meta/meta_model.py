@@ -1,3 +1,7 @@
+"""
+CODE BY THE AUTHOR
+Combines the GCN Encoder and the Transformer Decoder.
+"""
 from ..graph.gcn_encoder import GCNEncoder
 from ..persistence import PersistableModel, ModelPersister
 from torch import FloatTensor, LongTensor, Tensor
@@ -7,7 +11,6 @@ from torch import nn
 import pydantic
 import torch
 from typing import Optional
-
 
 class Config(pydantic.BaseModel):
     tf_tgt_vocab_size: int

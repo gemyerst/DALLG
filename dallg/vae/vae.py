@@ -1,3 +1,6 @@
+"""
+CODE FROM https://github.com/lucidrains/DALLE-pytorch/blob/58c1e1a4fef10725a79bd45cdb5581c03e3e59e7/dalle_pytorch/vae.py
+"""
 from math import log2, sqrt
 
 import torch
